@@ -82,9 +82,34 @@ function getResult(stringOrNumberOrBoolean: string | number | boolean) {
 
 let unicon: string | number | boolean | never; // never和其他类型做联合类型最终是不显示的
 
+// object 对象类型
+// {}、Object       {} 、Object 不采用,偶尔会使用{}表示对象上无任何属性. 都可以将任何值赋予给{}或者Object
+// object 非基础类型 (函数,对象,数组)
+const create = (target: object) => {};
+create(function () {});
+create({});
+create([]);
+
+// Object 类
+let obj: Object = 'abc'; // 最大范围
+let obj1: {} = '123';
+
+// any任何类型 有的时候我们要对类型做转化,无法直接转化,你认为这个值你可以赋予给任何类型了.
+// 出问题自己管
+
+let str2; // 声明一个变量,不给类型默认就是any类型
+// ts会根据你赋予的值会自动推导类型
+str2 = 'aaaaa';
+
+// symbol
+let s1: symbol = Symbol('1');
+
+// bigint
+let b1: bigint = BigInt(Number.MAX_SAFE_INTEGER + 100); // bigint和number完全不一样
+
 /*
   基本类型：
-  string、number、boolean、array、tuple、null、undefined、void、never
+  string、number、boolean、array、tuple、null、undefined、void、never、symbol、bigint、object、any
 */
 
 // 模块之间的隔离
