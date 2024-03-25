@@ -1,7 +1,3 @@
-// import { getResult } from './01basicDataType';
-// import { unionAndAssertion } from "./02unionAndAssertion";
-// import { fnCallback } from "./03Function"
-
 // 类本身就可以充当类型,可以描述实例(类的类型)
 
 // ts中要求所有的属性,必须先声明(采用修饰符来声明)
