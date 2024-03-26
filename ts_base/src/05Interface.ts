@@ -109,6 +109,8 @@ type ValueOf = ICar[keyof ICar]; // 通过索引操作符 取值的集合
 interface ChineseSpeakable {
   a: 1;
   speakChinese(): void;
+  speakEnglish(): void;
+  // speakEnglish(): string;   和类一样,声明和返回得一样
 }
 interface EnglishSpeakable {
   speakEnglish(): void;
